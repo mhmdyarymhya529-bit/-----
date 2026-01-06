@@ -162,3 +162,72 @@
       if (isPlaying) {
         player.pause(); isPlaying = false;
         playPauseBtn.textContent = "▶️"; cover.classList.remove("rotate");
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پخش‌کننده موزیک محیا</title>
+  <style>
+    body {
+      font-family: "Tahoma", sans-serif;
+      background: linear-gradient(135deg, #1a0033, #4b0082);
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .player {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #6a0dad;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #9b30ff;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 پخش‌کننده موزیک محیا 🎵</h1>
+  
+  <div class="player">
+    <audio id="audio" src="music.mp3"></audio>
+    <button onclick="playMusic()">▶️ پخش</button>
+    <button onclick="pauseMusic()">⏸ توقف</button>
+    <button onclick="stopMusic()">⏹ پایان</button>
+  </div>
+
+  <script>
+    const audio = document.getElementById("audio");
+
+    function playMusic() {
+      audio.play();
+    }
+    function pauseMusic() {
+      audio.pause();
+    }
+    function stopMusic() {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+</body>
+</html>
