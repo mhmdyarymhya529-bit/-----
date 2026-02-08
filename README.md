@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<سایت های زیبا برای کسب کار های زیبا و نو>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Tahoma', sans-serif; /* فونت مناسب */
-            background-color: #fce4ec; /* صورتی خیلی ملایم */
+            background-color: #fce4ec; /* سفید ابری خیلی ملایم */
             color: #c2185b; /* صورتی پررنگ برای متن */
             display: flex;
             justify-content: center;
