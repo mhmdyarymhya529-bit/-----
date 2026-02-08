@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت‌نویس: وب‌سایت‌های ارزان</title>
+    <style>
+        /* --- تنظیمات پایه و انیمیشن --- */
+        @keyframes pulse-and-shake {
+            0% { transform: scale(1) rotate(0deg); }
+            20% { transform: scale(1.05) rotate(-3deg); }
+            40% { transform: scale(0.95) rotate(3deg); }
+            60% { transform: scale(1.02) rotate(-2deg); }
+            80% { transform: scale(0.98) rotate(2deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fce4ec; /* صورتی ملایم */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.6);
+            max-width: 650px;
+            width: 100%;
+            border: 3px solid #f48fb1;
+        }
+
+        .message {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .highlight {
+            color: #e91e63;
+            font-weight: 900;
+            font-size: 1.1em;
+        }
+
+        /* --- استایل دکمه (CTA) --- */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: #e91e63;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            
+            /* اعمال انیمیشن */
+            animation: pulse-and-shake 2s infinite;
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.5);
+        }
+
+        .cta-button:hover {
+            background-color: #c2185b;
+            animation: none;
+            box-shadow: 0 8px 20px rgba(194, 24, 91, 0.7);
+            transform: scale(1.05);
+        }
+
+        /* --- بخش جدید: متن پایین‌تر --- */
+        .footer-note {
+            margin-top: 35px; /* فاصله مناسب از دکمه */
+            font-size: 0.9em;
+            color: #6a1b9a; /* رنگ بنفش ملایم برای تفاوت با متن اصلی */
+            line-height: 1.6;
+            padding: 10px;
+            border-top: 1px dashed #f8bbd0; /* خط جداکننده ملایم */
+        }
+
+        .footer-note a {
+            color: #4a148c; /* لینک‌های داخل متن پایین‌تر */
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="message">
+            اگر به دنبال سایتی برای کسب‌وکار کوچک خود هستید، با بودجه‌ای محدود، 
+            <span class="highlight">سایت‌های من بهترین گزینه هستند</span>.
+        </p>
+        <a href="#contact" class="cta-button">سفارش دهید</a>
+
+        <!-- !دنبال یه سایت برای کسب و کار جدید خودتی؟اونقدر درامد نداری که 25 میلیون برای یه سایت بدی؟ نگران نباش من سایتتو به صورت ساده و پینترستی و کیوت برات مینویسم و سقف قیمت 2 میلیونه اگه میخوای نمونه کار بینی یا سفارش بدی خودت میدونی کجا کلیک کنی -->
+        <div class="footer-note">
+            <p>
+                طراحی شده با طعم پینترستی برای مشتریان تازه کار! 
+                <br>
+                تضمین کیفیت کدنویسی و استایل‌های سفارشی. برای مشاهده نمونه کارها، اینجا را کلیک کنید: 
+                <a href="/portfolio">نمونه کارها</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
