@@ -1,14 +1,25 @@
-<سایت های زیبا برای کسب کار های زیبا و نو>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت های بی دردسر</title>
+    <title>سایت‌نویس: وب‌سایت‌های ارزان</title>
     <style>
+        /* 1. تعریف انیمیشن لرزش/تپش برای دکمه */
+        @keyframes pulse-and-shake {
+            0% { transform: scale(1) rotate(0deg); }
+            20% { transform: scale(1.05) rotate(-3deg); }
+            40% { transform: scale(0.95) rotate(3deg); }
+            60% { transform: scale(1.02) rotate(-2deg); }
+            80% { transform: scale(0.98) rotate(2deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        /* استایل‌های کلی صفحه */
         body {
-            font-family: 'Tahoma', sans-serif; /* فونت مناسب */
-            background-color: #fce4ec; /* سفید ابری خیلی ملایم */
-            color: #c2185b; /* صورتی پررنگ برای متن */
+            font-family: 'Arial', sans-serif; /* فونت استاندارد و خوانا */
+            background-color: #fce4ec; /* صورتی ملایم (Pale Pink) */
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,39 +27,63 @@
             margin: 0;
             text-align: center;
             padding: 20px;
-            box-sizing: border-box; /* اطمینان از اینکه padding در محاسبه عرض/ارتفاع لحاظ شود */
+            box-sizing: border-box;
         }
+
+        /* استایل کانتینر اصلی */
         .container {
-            background-color: #ffffff; /* پس‌زمینه سفید */
-            padding: 30px 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(233, 30, 99, 0.2); /* سایه صورتی */
-            max-width: 600px;
+            background-color: #ffffff; /* سفید */
+            padding: 40px;
+            border-radius: 20px; /* گوشه‌های گردتر برای ظاهر کیوت‌تر */
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.6); /* سایه بزرگ‌تر و صورتی‌تر */
+            max-width: 650px;
             width: 100%;
+            border: 3px solid #f48fb1; /* حاشیه صورتی */
         }
+
+        .message {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
         .highlight {
-            color: #e91e63; /* صورتی برجسته */
-            font-weight: bold;
+            color: #e91e63; /* صورتی پررنگ (Deep Pink) */
+            font-weight: 900; /* وزن فونت ضخیم‌تر */
+            font-size: 1.1em;
         }
+
+        /* 2. اعمال انیمیشن روی دکمه */
         .cta-button {
             display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background-color: #f48fb1; /* صورتی ملایم برای دکمه */
+            padding: 15px 35px;
+            background-color: #e91e63; /* رنگ اصلی دکمه */
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 30px; /* دکمه کاملاً گرد */
+            font-size: 1.3em;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            
+            /* اعمال انیمیشن */
+            animation: pulse-and-shake 2s infinite;
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.5); /* سایه اولیه */
         }
+
         .cta-button:hover {
-            background-color: #ec407a; /* صورتی تیره‌تر هنگام هاور */
+            background-color: #c2185b; /* صورتی تیره‌تر هنگام هاور */
+            animation: none; /* توقف انیمیشن هنگام هاور برای تمرکز کاربر */
+            box-shadow: 0 8px 20px rgba(194, 24, 91, 0.7);
+            transform: scale(1.05); /* کمی بزرگ شدن در هاور */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <p>اگر به دنبال سایتی برای کسب‌وکار کوچک خود هستید، با بودجه‌ای محدود، <span class="highlight">سایت‌های من بهترین گزینه هستند</span>.</p>
+        <p class="message">
+            اگر به دنبال سایتی برای کسب‌وکار کوچک خود هستید، با بودجه‌ای محدود، 
+            <span class="highlight">سایت‌های من بهترین گزینه هستند</span>.
+        </p>
         <a href="#contact" class="cta-button">سفارش دهید</a>
     </div>
 </body>
