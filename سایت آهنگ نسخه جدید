@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دانلود آهنگ‌ها</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎵 مجموعه آهنگ‌ها</h1>
+
+    <div class="track">
+      <img src="images/song1.jpg" alt="آهنگ 1">
+      <div class="info">
+        <h2>آهنگ شماره یک</h2>
+        <audio controls>
+          <source src="music/song1.mp3" type="audio/mpeg">
+  
+        </audio>
+        <a href="music/song1.mp3" download class="download-btn">دانلود</a>
+      </div>
+    </div>
+
+    <div class="track">
+      <img src="images/song2.jpg" alt="آهنگ 2">
+      <div class="info">
+        <h2>آهنگ شماره دو</h2>
+        <audio controls>
+          <source src="music/song2.mp3" type="audio/mpeg">
+        </audio>
+        <a href="music/song2.mp3" download class="download-btn">دانلود</a>
+
+body {
+  background-color: #f9f9fb;
+  font-family: Vazirmatn, sans-serif;
+  direction: rtl;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  background-color: #f3f3f7;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.track:hover {
+  transform: scale(1.02);
+}
+
+.track img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 15px;
+  flex: 1;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #ff6f91;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #ff5077;
+}
+project/
+│
+├── index.html
+├── style.css
+├── music/
+│   ├── song1.mp3
+│   ├── song2.mp3
+│
+└── images/
+    ├── song1.jpg
+    ├── song2.jpg
+</body>
+</html>
