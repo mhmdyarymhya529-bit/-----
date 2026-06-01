@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ورود پرنسسی رنگی</title>
     <style>
         /* تنظیمات کلی صفحه با رنگ‌های پررنگ‌تر */
@@ -20,23 +20,25 @@
             position: relative;
         }
 
-        /* استایل کانتینر فرم */
+        /* استایل کانتینر فرم - بهینه برای موبایل و تبلت */
         .login-container {
             background-color: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 25px; /* کاهش پدینگ برای فضای بیشتر */
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
             text-align: center;
             z-index: 10;
-            border: 4px solid #ff1493;
-            width: 320px;
+            border: 3px solid #ff1493;
+            width: 90%; /* عرض نسبی برای موبایل */
+            max-width: 320px; /* حداکثر عرض برای تبلت و دسکتاپ */
             backdrop-filter: blur(8px);
+            margin: 20px; /* فاصله از لبه‌ها در موبایل */
         }
 
         h2 {
             color: #c71585;
-            margin-bottom: 20px;
-            font-size: 26px;
+            margin-bottom: 15px;
+            font-size: 22px; /* فونت کمی کوچک‌تر برای موبایل */
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
@@ -44,12 +46,12 @@
         input {
             width: 100%;
             padding: 12px;
-            margin: 10px 0;
+            margin: 8px 0;
             border: 2px solid #ff69b4;
-            border-radius: 15px;
+            border-radius: 12px;
             background-color: #fff0f5;
             color: #c71585;
-            font-size: 16px;
+            font-size: 16px; /* اندازه استاندارد برای لمس */
             box-sizing: border-box;
             outline: none;
             transition: 0.3s;
@@ -58,18 +60,18 @@
         input:focus {
             border-color: #ff1493;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+            box-shadow: 0 0 8px rgba(255, 20, 147, 0.5);
         }
 
         /* دکمه ورود */
         button {
             width: 100%;
             padding: 12px;
-            margin-top: 15px;
+            margin-top: 12px;
             background: linear-gradient(45deg, #ff69b4, #ff1493);
             color: white;
             border: none;
-            border-radius: 15px;
+            border-radius: 12px;
             font-size: 18px;
             cursor: pointer;
             transition: 0.3s;
@@ -79,64 +81,64 @@
 
         button:hover {
             background: linear-gradient(45deg, #ff1493, #c71585);
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(199, 21, 133, 0.6);
+            transform: scale(1.02); /* تغییر اندازه کمتر برای موبایل */
+            box-shadow: 0 4px 12px rgba(199, 21, 133, 0.6);
         }
 
         /* پیام خطا یا موفقیت */
         #message {
-            margin-top: 15px;
-            font-size: 14px;
+            margin-top: 12px;
+            font-size: 13px;
             font-weight: bold;
             min-height: 20px;
         }
         .error { color: #d63384; }
         .success { color: #28a745; }
 
-        /* استایل استیکرهای شناور */
+        /* استایل استیکرهای شناور - کمی کوچک‌تر برای موبایل */
         .floating-sticker {
             position: absolute;
-            font-size: 4rem;
-            opacity: 0.9;
+            font-size: 3rem; /* اندازه کوچک‌تر */
+            opacity: 0.85;
             animation: float 5s ease-in-out infinite;
             z-index: 1;
             user-select: none;
-            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 3px 4px rgba(0,0,0,0.2));
         }
 
         @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-            50% { transform: translateY(-30px) rotate(15deg); opacity: 1; }
-            100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-20px) rotate(10deg); opacity: 0.9; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
         }
 
-        /* موقعیت‌دهی استیکرها (فقط یک توت‌فرنگی) */
-        .sticker-1 { top: 10%; left: 10%; animation-delay: 0s; }
-        .sticker-2 { top: 20%; right: 15%; animation-delay: 1s; }
-        .sticker-3 { bottom: 15%; left: 20%; animation-delay: 2s; }
-        .sticker-4 { bottom: 10%; right: 10%; animation-delay: 3s; }
-        .sticker-5 { top: 50%; left: 5%; animation-delay: 1.5s; }
-        .sticker-6 { top: 15%; left: 50%; animation-delay: 2.5s; }
-        .sticker-7 { bottom: 30%; right: 30%; animation-delay: 0.5s; }
-        .sticker-8 { top: 60%; right: 5%; animation-delay: 3.5s; }
-        .sticker-9 { top: 80%; left: 40%; animation-delay: 4s; }
-        .sticker-10 { top: 5%; right: 40%; animation-delay: 2.2s; }
+        /* موقعیت‌دهی استیکرها (همه متفاوت و تکراری نیستند) */
+        .sticker-1 { top: 8%; left: 8%; animation-delay: 0s; }
+        .sticker-2 { top: 18%; right: 12%; animation-delay: 1s; }
+        .sticker-3 { bottom: 12%; left: 15%; animation-delay: 2s; }
+        .sticker-4 { bottom: 8%; right: 8%; animation-delay: 3s; }
+        .sticker-5 { top: 45%; left: 5%; animation-delay: 1.5s; }
+        .sticker-6 { top: 12%; left: 45%; animation-delay: 2.5s; }
+        .sticker-7 { bottom: 25%; right: 25%; animation-delay: 0.5s; }
+        .sticker-8 { top: 55%; right: 8%; animation-delay: 3.5s; }
+        .sticker-9 { top: 75%; left: 35%; animation-delay: 4s; }
+        .sticker-10 { top: 3%; right: 35%; animation-delay: 2.2s; }
 
     </style>
 </head>
 <body>
 
-    <!-- استیکرهای شناور (فقط یک توت‌فرنگی) -->
-    <div class="floating-sticker sticker-1">🍰</div>
-    <div class="floating-sticker sticker-2">🍓</div> <!-- فقط این یکی توت‌فرنگیه -->
-    <div class="floating-sticker sticker-3">🍬</div>
-    <div class="floating-sticker sticker-4">🧁</div>
-    <div class="floating-sticker sticker-5">👸</div>
-    <div class="floating-sticker sticker-6">🍭</div>
-    <div class="floating-sticker sticker-7">🍰</div>
-    <div class="floating-sticker sticker-8">🎀</div>
-    <div class="floating-sticker sticker-9">✨</div>
-    <div class="floating-sticker sticker-10">🍬</div>
+    <!-- استیکرهای شناور (هر کدام فقط یک بار، بدون قلب و تاج) -->
+    <div class="floating-sticker sticker-1">🍰</div> <!-- کیک -->
+    <div class="floating-sticker sticker-2">🍓</div> <!-- توت فرنگی (فقط یکی) -->
+    <div class="floating-sticker sticker-3">🍬</div> <!-- پاستیل -->
+    <div class="floating-sticker sticker-4">🧁</div> <!-- کاپ‌کیک -->
+    <div class="floating-sticker sticker-5">🍭</div> <!-- آبنبات -->
+    <div class="floating-sticker sticker-6">🎀</div> <!-- پاپیون -->
+    <div class="floating-sticker sticker-7">✨</div> <!-- ستاره/درخشش -->
+    <div class="floating-sticker sticker-8">🌸</div> <!-- گل -->
+    <div class="floating-sticker sticker-9">🍪</div> <!-- کوکی (جایگزین برای تنوع) -->
+    <div class="floating-sticker sticker-10">🎂</div> <!-- کیک تولد (جایگزین برای تنوع) -->
 
     <!-- فرم ورود -->
     <div class="login-container">
@@ -170,4 +172,5 @@
 
 </body>
 </html>
+
 
