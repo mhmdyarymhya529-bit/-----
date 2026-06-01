@@ -13,28 +13,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #ffe6f2 0%, #ffcce6 100%); /* گرادینت صورتی ملایم */
-            font-family: 'Tahoma', sans-serif;
-            overflow: hidden; /* جلوگیری از اسکرول اضافه */
+            background: linear-gradient(135deg, #ffe6f2 0%, #ffcce6 100%);
+            font-family: 'Tahoma', 'Segoe UI', sans-serif;
+            overflow: hidden;
             position: relative;
         }
 
         /* استایل کانتینر فرم */
         .login-container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 25px;
-            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
             text-align: center;
-            z-index: 10; /* فرم روی استیکرها باشه */
+            z-index: 10;
             border: 3px solid #ffb6c1;
-            width: 300px;
+            width: 320px;
+            backdrop-filter: blur(5px);
         }
 
         h2 {
             color: #d63384;
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 26px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         /* استایل ورودی‌ها */
@@ -55,6 +57,7 @@
         input:focus {
             border-color: #ff69b4;
             background-color: #fff;
+            box-shadow: 0 0 8px rgba(255, 105, 180, 0.3);
         }
 
         /* دکمه ورود */
@@ -69,73 +72,102 @@
             font-size: 18px;
             cursor: pointer;
             transition: 0.3s;
-            font-family: 'Tahoma', sans-serif;
+            font-family: inherit;
+            font-weight: bold;
         }
 
         button:hover {
             background-color: #d63384;
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(214, 51, 132, 0.4);
         }
+
+        /* پیام خطا یا موفقیت */
+        #message {
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            min-height: 20px;
+        }
+        .error { color: #d63384; }
+        .success { color: #28a745; }
 
         /* استایل استیکرهای شناور */
         .floating-sticker {
             position: absolute;
-            font-size: 3rem;
-            opacity: 0.8;
+            font-size: 3.5rem;
+            opacity: 0.85;
             animation: float 6s ease-in-out infinite;
             z-index: 1;
+            user-select: none;
         }
 
-        /* انیمیشن شناور بودن */
         @keyframes float {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(0px) rotate(0deg);
-                opacity: 0.6;
-            }
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-25px) rotate(10deg); opacity: 1; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
         }
 
-        /* موقعیت‌دهی تصادفی استیکرها */
+        /* موقعیت‌دهی استیکرها */
         .sticker-1 { top: 10%; left: 10%; animation-delay: 0s; }
         .sticker-2 { top: 20%; right: 15%; animation-delay: 1s; }
         .sticker-3 { bottom: 15%; left: 20%; animation-delay: 2s; }
         .sticker-4 { bottom: 10%; right: 10%; animation-delay: 3s; }
         .sticker-5 { top: 50%; left: 5%; animation-delay: 1.5s; }
-        .sticker-6 { top: 15%; left: 50%; animation-delay: 2.5s; }
+      
         .sticker-7 { bottom: 30%; right: 30%; animation-delay: 0.5s; }
         .sticker-8 { top: 60%; right: 5%; animation-delay: 3.5s; }
+        .sticker-9 { top: 80%; left: 40%; animation-delay: 4s; }
+        .sticker-10 { top: 5%; right: 40%; animation-delay: 2.2s; }
 
     </style>
 </head>
 <body>
 
     <!-- استیکرهای شناور -->
-    <div class="floating-sticker sticker-1">🍰</div> <!-- کیک -->
-    <div class="floating-sticker sticker-2">🍓</div> <!-- توت فرنگی -->
-    <div class="floating-sticker sticker-3">🍬</div> <!-- آبنبات -->
-    <div class="floating-sticker sticker-4">🧁</div> <!-- کاپ کیک/خامه -->
-    <div class="floating-sticker sticker-5">👸</div> <!-- پرنسسی -->
-    <div class="floating-sticker sticker-6">🍓</div> <!-- توت فرنگی -->
-    <div class="floating-sticker sticker-7">🍭</div> <!-- آبنبات -->
-    <div class="floating-sticker sticker-8">🍰</div> <!-- کیک -->
+    <div class="floating-sticker sticker-1">🍰</div>
+    <div class="floating-sticker sticker-2">🍓</div>
+    <div class="floating-sticker sticker-3">🍬</div>
+    <div class="floating-sticker sticker-4">🧁</div>
+    <div class="floating-sticker sticker-5">👸</div>
+
+    <div class="floating-sticker sticker-7">🍭</div>
+    <div class="floating-sticker sticker-8">🍰</div>
+    <div class="floating-sticker sticker-9">🎀</div>
+    <div class="floating-sticker sticker-10">✨</div>
 
     <!-- فرم ورود -->
     <div class="login-container">
         <h2>👑 ورود به دنیای صورتی</h2>
-        <form action="#" method="POST">
-            <input type="text" placeholder="نام کاربری" required>
-            <input type="password" placeholder="رمز عبور" required>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="نام کاربری" required>
+            <input type="password" id="password" placeholder="رمز عبور" required>
             <button type="submit">ورود ✨</button>
+            <div id="message"></div>
         </form>
     </div>
 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // جلوگیری از رفرش شدن صفحه
+            
+            const passwordInput = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+            
+            // رمز عبور مورد نظر
+            const correctPassword = 'کیک توت فرنگی';
+
+            if (passwordInput === correctPassword) {
+                messageDiv.textContent = '🎉 خوش آمدی پرنسس! ورود موفقیت‌آمیز بود.';
+                messageDiv.className = 'success';
+                // اینجا می‌تونی کاربر رو به صفحه دیگه هدایت کنی
+                // window.location.href = 'home.html';
+            } else {
+                messageDiv.textContent = '❌ رمز عبور اشتباهه! دوباره تلاش کن.';
+                messageDiv.className = 'error';
+            }
+        });
+    </script>
+
 </body>
 </html>
-
