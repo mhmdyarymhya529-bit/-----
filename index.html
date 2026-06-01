@@ -25,16 +25,16 @@
             background-color: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* سایه کمی تیره‌تر برای کنتراست */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             text-align: center;
             z-index: 10;
-            border: 4px solid #ff1493; /* حاشیه صورتی پررنگ */
+            border: 4px solid #ff1493;
             width: 320px;
             backdrop-filter: blur(8px);
         }
 
         h2 {
-            color: #c71585; /* بنفش مایل به صورتی */
+            color: #c71585;
             margin-bottom: 20px;
             font-size: 26px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -96,12 +96,12 @@
         /* استایل استیکرهای شناور */
         .floating-sticker {
             position: absolute;
-            font-size: 4rem; /* کمی بزرگ‌تر */
+            font-size: 4rem;
             opacity: 0.9;
             animation: float 5s ease-in-out infinite;
             z-index: 1;
             user-select: none;
-            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); /* سایه برای عمق بیشتر */
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
         }
 
         @keyframes float {
@@ -110,7 +110,7 @@
             100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
         }
 
-        /* موقعیت‌دهی استیکرها (یک توت‌فرنگی حذف شد) */
+        /* موقعیت‌دهی استیکرها (فقط یک توت‌فرنگی) */
         .sticker-1 { top: 10%; left: 10%; animation-delay: 0s; }
         .sticker-2 { top: 20%; right: 15%; animation-delay: 1s; }
         .sticker-3 { bottom: 15%; left: 20%; animation-delay: 2s; }
@@ -126,17 +126,17 @@
 </head>
 <body>
 
-    <!-- استیکرهای شناور (یک توت‌فرنگی حذف شد) -->
+    <!-- استیکرهای شناور (فقط یک توت‌فرنگی) -->
     <div class="floating-sticker sticker-1">🍰</div>
-    <div class="floating-sticker sticker-2">🍓</div>
+    <div class="floating-sticker sticker-2">🍓</div> <!-- فقط این یکی توت‌فرنگیه -->
     <div class="floating-sticker sticker-3">🍬</div>
     <div class="floating-sticker sticker-4">🧁</div>
     <div class="floating-sticker sticker-5">👸</div>
-    <!-- 🍓 حذف شد -->
-    <div class="floating-sticker sticker-7">🍭</div>
-    <div class="floating-sticker sticker-8">🍰</div>
-    <div class="floating-sticker sticker-9">🎀</div>
-    <div class="floating-sticker sticker-10">✨</div>
+    <div class="floating-sticker sticker-6">🍭</div>
+    <div class="floating-sticker sticker-7">🍰</div>
+    <div class="floating-sticker sticker-8">🎀</div>
+    <div class="floating-sticker sticker-9">✨</div>
+    <div class="floating-sticker sticker-10">🍬</div>
 
     <!-- فرم ورود -->
     <div class="login-container">
