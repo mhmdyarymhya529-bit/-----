@@ -1,49 +1,141 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>دانلود آهنگ‌ها</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود پرنسسی</title>
+    <style>
+        /* تنظیمات کلی صفحه */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffe6f2 0%, #ffcce6 100%); /* گرادینت صورتی ملایم */
+            font-family: 'Tahoma', sans-serif;
+            overflow: hidden; /* جلوگیری از اسکرول اضافه */
+            position: relative;
+        }
+
+        /* استایل کانتینر فرم */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+            text-align: center;
+            z-index: 10; /* فرم روی استیکرها باشه */
+            border: 3px solid #ffb6c1;
+            width: 300px;
+        }
+
+        h2 {
+            color: #d63384;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* استایل ورودی‌ها */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ffb6c1;
+            border-radius: 15px;
+            background-color: #fff0f5;
+            color: #d63384;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #ff69b4;
+            background-color: #fff;
+        }
+
+        /* دکمه ورود */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        button:hover {
+            background-color: #d63384;
+            transform: scale(1.05);
+        }
+
+        /* استایل استیکرهای شناور */
+        .floating-sticker {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        /* انیمیشن شناور بودن */
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+        }
+
+        /* موقعیت‌دهی تصادفی استیکرها */
+        .sticker-1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .sticker-2 { top: 20%; right: 15%; animation-delay: 1s; }
+        .sticker-3 { bottom: 15%; left: 20%; animation-delay: 2s; }
+        .sticker-4 { bottom: 10%; right: 10%; animation-delay: 3s; }
+        .sticker-5 { top: 50%; left: 5%; animation-delay: 1.5s; }
+        .sticker-6 { top: 15%; left: 50%; animation-delay: 2.5s; }
+        .sticker-7 { bottom: 30%; right: 30%; animation-delay: 0.5s; }
+        .sticker-8 { top: 60%; right: 5%; animation-delay: 3.5s; }
+
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>🎵 مجموعه آهنگ‌ها</h1>
+    <!-- استیکرهای شناور -->
+    <div class="floating-sticker sticker-1">🍰</div> <!-- کیک -->
+    <div class="floating-sticker sticker-2">🍓</div> <!-- توت فرنگی -->
+    <div class="floating-sticker sticker-3">🍬</div> <!-- آبنبات -->
+    <div class="floating-sticker sticker-4">🧁</div> <!-- کاپ کیک/خامه -->
+    <div class="floating-sticker sticker-5">👸</div> <!-- پرنسسی -->
+    <div class="floating-sticker sticker-6">🍓</div> <!-- توت فرنگی -->
+    <div class="floating-sticker sticker-7">🍭</div> <!-- آبنبات -->
+    <div class="floating-sticker sticker-8">🍰</div> <!-- کیک -->
 
-    <div class="track">
-      <img src="images/song1.jpg" alt="آهنگ 1">
-      <div class="info">
-        <h2>آهنگ شماره یک</h2>
-        <audio controls>
-          <source src="music/song1.mp3" type="audio/mpeg">
-          مرسی، مرورگرت پخش موزیک رو پشتیبانی نمی‌کنه.
-        </audio>
-        <a href="music/song1.mp3" download class="download-btn">دانلود</a>
-      </div>
+    <!-- فرم ورود -->
+    <div class="login-container">
+        <h2>👑 ورود به دنیای صورتی</h2>
+        <form action="#" method="POST">
+            <input type="text" placeholder="نام کاربری" required>
+            <input type="password" placeholder="رمز عبور" required>
+            <button type="submit">ورود ✨</button>
+        </form>
     </div>
-
-    <div class="track">
-      <img src="images/song2.jpg" alt="آهنگ 2">
-      <div class="info">
-        <h2>آهنگ شماره دو</h2>
-        <audio controls>
-          <source src="music/song2.mp3" type="audio/mpeg">
-        </audio>
-        <a href="music/song2.mp3" download class="download-btn">دانلود</a>
-      </div>
-    </div>
-
-  </div>
 
 </body>
 </html>
-MY-/
-├── index.html
-├── style.css
-├── music/
-│   ├── song1.mp3
-│   └── song2.mp3
-└── images/
-    ├── song1.jpg
-    └── song2.jpg
+
